@@ -1,0 +1,41 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+}
+h1{
+   margin-left: 30px;
+}
+.square {
+    background-color: rgb(255,255,255);
+}
+
+#square-wrapper {
+    display: flex;
+    flex-wrap: wrap;    
+    width: 640px;
+    height: auto;
+    margin: 30px;
+    border-color: black;
+    border-width: 10px;
+    border-style: solid;
+}
+
+#setting-container {
+    display: flex;
+    padding: 30px;
+    margin-left: 30px;
+    border-style: solid;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+#gridSettings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 30px;
+}
+
+#colormode {    
+    padding-left: 30px;    
+}

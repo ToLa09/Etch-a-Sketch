@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Etch-a-Sketch</title>
+        <meta charset="UTF-8">
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Etch-a-Sketch</h1>
+        <div id="setting-container">
+            <button id="btnClear">Clear Grid</button>
+            <div id="gridSettings">
+                <p id="textGridSize">Gridsize: 16x16</p>
+                <input id="sliderGridSize" type="range" min="1" max="100" value="16">            
+            </div> 
+            <div id="colormode">
+                <p>Colormode:</p>
+                <input type="radio" id="grayscale" name="colormode" value="grayscale">
+                <label for="grayscale">Grayscale</label>
+                <input type="radio" id="rgb" name="colormode" value="rgb">
+                <label for="rgb">RGB</label>
+            </div>                        
+        </div>             
+        <div id="square-wrapper">          
+        </div>
+    </body>
+</html>
