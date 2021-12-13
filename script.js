@@ -31,7 +31,6 @@ function changeBackgroundColor(e) {
         e.target.style.backgroundColor = getRandomColor();
     } else if (colormode == "grayscale") {
         let currentColor = e.target.style.backgroundColor;
-        console.log(currentColor);
         if (!currentColor) {
             e.target.style.backgroundColor = `rgb(230,230,230)`;
         } else {
