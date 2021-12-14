@@ -1,6 +1,6 @@
 const squareWrapper = document.querySelector("#square-wrapper");
 
-function createSquares(size) {
+function createSquares_old(size) {
     let numberOfSquares = (size * size);
     let squareSize = (640/size).toString();
     for (i = 1; i <= numberOfSquares; i++) {      
@@ -11,6 +11,18 @@ function createSquares(size) {
         square.id = "Square" + i;
         squareWrapper.appendChild(square);
     };
+}
+
+function createSquares(size) {
+    let numberOfSquares = (size * size);
+    squareWrapper.style.gridTemplateColumns = `repeat(${size}, auto)`;  
+    squareWrapper.style.gridTemplateRows = `repeat(${size}, auto)`;    
+    for (i = 1; i <= numberOfSquares; i++) {      
+        let square = document.createElement("div");        
+        square.classList.add("square");
+        square.id = "Square" + i;
+        squareWrapper.appendChild(square);
+    };        
 }
 
 createSquares(16);
@@ -27,6 +39,7 @@ function getRandomColor () {
 
 function changeBackgroundColor(e) {    
     const colormode = document.querySelector("input[name=\"colormode\"]:checked").value;
+    console.log(e.target);
     if (colormode == "rgb") {
         e.target.style.backgroundColor = getRandomColor();
     } else if (colormode == "grayscale") {
@@ -67,7 +80,7 @@ const BtnClear = document.querySelector("#btnClear");
 BtnClear.addEventListener("click", resetSquares);
 
 const sliderGrid = document.querySelector("#sliderGridSize");
-sliderGrid.addEventListener("mouseup", changeGridsize);
+sliderGrid.addEventListener("input", changeGridsize);
 sliderGrid.addEventListener("input", function(e) {
     const textGridSize = document.querySelector("#textGridSize");
     textGridSize.innerText = "Gridsize: " + e.target.value.toString() + "x" +e.target.value.toString();
